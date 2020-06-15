@@ -46,8 +46,3 @@ class DefaultNamingStrategy extends AbstractNamingStrategy
         return $filename;
     }
 }
-
-
-        return $filename;
-    }
-}
