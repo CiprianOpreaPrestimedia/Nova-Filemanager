@@ -17,9 +17,13 @@ class FilemanagerToolController extends Controller
     /**
      * @param FileManagerService $filemanagerService
      */
-    public function __construct(FileManagerService $filemanagerService)
+    public function __construct()
     {
-        $this->service = $filemanagerService;
+        $this->middleware(function ($request, $next) {
+            $this->service = (new FileManagerService());
+            return $next($request);
+        });
+       
     }
 
     /**
